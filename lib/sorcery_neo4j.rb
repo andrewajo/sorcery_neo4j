@@ -2,7 +2,7 @@ require "sorcery_neo4j/version"
 
 module SorceryNeo4j
   if defined?(Neo4j)
-    require 'sorcery/adapters/neo4j_adapter'
+    require 'sorcery_neo4j/adapter'
 
     Neo4j::ActiveNode::ClassMethods.send :include, Sorcery::Model
 

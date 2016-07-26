@@ -1,3 +1,5 @@
+require 'sorcery'
+
 module SorceryNeo4j
   class Neo4jAdapter < Sorcery::Adapters::BaseAdapter
     def update_attributes(attrs)

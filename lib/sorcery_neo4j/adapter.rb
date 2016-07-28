@@ -59,7 +59,7 @@ module SorceryNeo4j
 
       def find_by_credentials(credentials)
         @klass.sorcery_config.username_attribute_names.each do |attribute|
-          @user = @klass.where(attribute => credential_regex(credentials[0])).first
+          @user = @klass.where(attribute => credentials[0]).first
           break if @user
         end
         @user

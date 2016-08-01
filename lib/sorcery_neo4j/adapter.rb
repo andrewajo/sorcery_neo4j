@@ -1,7 +1,5 @@
-require 'sorcery'
-
 module SorceryNeo4j
-  class Neo4jAdapter < Sorcery::Adapters::BaseAdapter
+  class Adapter < Sorcery::Adapters::BaseAdapter
     def update_attributes(attrs)
       attrs.each do |name, value|
         @model.send(:"#{name}=", value)

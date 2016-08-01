@@ -7,11 +7,11 @@ module SorceryNeo4j
     Neo4j::ActiveNode::ClassMethods.send :include, Sorcery::Model
 
     Neo4j::ActiveNode.send :define_method, :sorcery_adapter do
-      @sorcery_adapter ||= SorceryNeo4j::Neo4jAdapter.new(self)
+      @sorcery_adapter ||= Adapter.new(self)
     end
 
     Neo4j::ActiveNode::ClassMethods.send :define_method, :sorcery_adapter do
-      SorceryNeo4j::Neo4jAdapter.from(self)
+      Adapter.from(self)
     end
   end
 end
